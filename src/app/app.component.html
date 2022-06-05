@@ -8,10 +8,10 @@
 </div>
 
 <!-- Diretivas Estruturais -->
-<h2 *ngIf="count > 7; else menor">O contador passou de 7!</h2>
+<h2 class="text-center" *ngIf="count > 7; else menor">O contador passou de 7!</h2>
 
 <ng-template #menor>
-  <h2>O contador é menor que 7!</h2>
+  <h2 class="text-center">O contador é menor que 7!</h2>
 </ng-template>
 
 <ul [ngSwitch]="count" class="list-group mx-auto col-3">
@@ -39,3 +39,18 @@
     *ngFor="let pessoa of pessoas"
   >O nome da pessoa é {{ pessoa.nome }} {{ pessoa.sobrenome }}.</li>
 </ul>
+
+<h3 class="col-4 mx-auto">{{ nome }}</h3>
+<div class="mx-auto col-4">
+  <button class="btn btn-success col-12 mb-2" (click)="clicou('João Souza da Silva')">Clique</button>
+</div>
+
+<div class="col-4 mx-auto">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Digite alguma coisa"
+    [(ngModel)]="texto"
+  >
+  <h4>Saida: {{ texto }} </h4>
+</div>
